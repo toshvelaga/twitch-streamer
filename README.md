@@ -1,5 +1,7 @@
 # youtube-streamer
 
+<img width="399" alt="Screen Shot 2023-01-27 at 5 30 50 PM" src="https://user-images.githubusercontent.com/38474161/215236550-b7957d95-6101-4db1-a600-cc3d81b1145c.png">
+
 # Start the Client
 
 ```
