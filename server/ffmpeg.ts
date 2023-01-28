@@ -1,6 +1,6 @@
-export const inputSettings = ['-i', '-', '-v', 'error']
+export const inputSettings = ['-i', '-', '-v', 'error'];
 
-const twitchSettings = (twitch: any) => {
+export const twitchSettings = (twitch: any) => {
   if (twitch) {
     return [
       // video codec config: low latency, adaptive bitrate
@@ -37,9 +37,9 @@ const twitchSettings = (twitch: any) => {
       '-f',
       'flv',
       twitch,
-    ]
-  } else return []
-}
+    ];
+  } else return [];
+};
 
 export const youtubeSettings = (youtube: any) => {
   if (youtube && youtube !== 'undefined') {
@@ -76,9 +76,9 @@ export const youtubeSettings = (youtube: any) => {
       '-f',
       'flv',
       youtube,
-    ]
-  } else return []
-}
+    ];
+  } else return [];
+};
 
 const facebookSettings = (facebook: any) => {
   if (facebook && facebook !== 'undefined') {
@@ -113,9 +113,9 @@ const facebookSettings = (facebook: any) => {
       '-f',
       'flv',
       facebook,
-    ]
-  } else return []
-}
+    ];
+  } else return [];
+};
 
 const customRtmpSettings = (customRTMP: any) => {
   if (customRTMP && customRTMP !== 'undefined') {
@@ -154,13 +154,10 @@ const customRtmpSettings = (customRTMP: any) => {
       '-f',
       'flv',
       customRTMP,
-    ]
-  } else return []
-}
-export const ffmpeg2 = (youtube: any, 
-  twitch: any, 
-  facebook: any, 
-  customRTMP: any) => {
+    ];
+  } else return [];
+};
+export const ffmpeg2 = (youtube: any, twitch: any, facebook: any, customRTMP: any) => {
   return [
     '-i',
     '-',
@@ -201,8 +198,8 @@ export const ffmpeg2 = (youtube: any,
     '-f',
     'tee',
     `[f=flv:onfail=ignore]${youtube}|[f=flv:onfail=ignore]${twitch}|[f=flv:onfail=ignore]${facebook}|[f=flv:onfail=ignore]${customRTMP}`,
-  ]
-}
+  ];
+};
 
 // module.exports.ffmpeg2 = ffmpeg2
 // module.exports.inputSettings = inputSettings
