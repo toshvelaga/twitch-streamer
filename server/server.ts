@@ -5,6 +5,8 @@ import { ChildProcess, spawn } from 'child_process';
 // const child_process = require('child_process');
 import { Server } from 'socket.io';
 import { ffmpeg2, youtubeSettings, twitchSettings, inputSettings } from './ffmpeg';
+import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 
 console.log(ffmpeg2);
 
@@ -37,7 +39,8 @@ io.on('connection', (socket) => {
   // ingestion address + streamname
   // const youtubeDestinationUrl = `rtmp://a.rtmp.youtube.com/live2/kk9m-v71b-ta1a-4e2p-cys6`
 
-  const twitch = '';
+  // @ts-ignore
+  const twitch = process.env.TWITCH_URL + process.env.TWITCH_STREAM_KEY;
 
   const ffmpegInput = inputSettings.concat(
     // youtubeSettings(youtubeDestinationUrl),
