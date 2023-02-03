@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
   // const youtubeDestinationUrl = `rtmp://a.rtmp.youtube.com/live2/kk9m-v71b-ta1a-4e2p-cys6`
 
   // @ts-ignore
-  const twitch = process.env.TWITCH_URL + process.env.TWITCH_STREAM_KEY;
+  const twitch = process.env.TWITCH_URL;
 
   const ffmpegInput = inputSettings.concat(
     // youtubeSettings(youtubeDestinationUrl),
